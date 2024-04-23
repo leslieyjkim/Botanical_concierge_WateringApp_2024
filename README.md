@@ -1,0 +1,6 @@
+-npm create vite@latest
+-project name 'Plant_watering_app'
+-react, js 
+-cd Plant_watering_app
+-npm install
+-npm run dev

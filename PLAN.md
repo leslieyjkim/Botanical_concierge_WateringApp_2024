@@ -4,7 +4,8 @@ Lighthouse Labs- Francis Bourgouin (W7D2)
 Show a list of plants, with their name, type, last watered, a warning if they are dangerously dry and a way to water them.
 
 ## Data
-
+Data driven app
+we only trust source of Data!
 ## Plant
 
 ```jsx
