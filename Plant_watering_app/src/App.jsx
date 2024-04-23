@@ -1,33 +1,21 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import PlantList from "./components/PlantList";
+import Header from "./components/Header";
+
+//const [count, setCount] = useState(0)
+//useState Hook (React functionality that you "hook" into)
+//Something available if you want to use it, you hook into it.
+//purpose of useState Hook : Giving you a reactive state (everytime the value changes, it will cause the page to rerender)
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <Header />
+    <main>
+      <PlantList />
+    </main>
     </>
   )
 }
