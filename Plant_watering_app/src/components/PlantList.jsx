@@ -1,9 +1,10 @@
 import PlantListItem from './PlantListItem'
-import { plantsArr } from "../data/plantData";
+
 
 export default function PlantList(props){
+    const {plants} = props //you receive props called plants.
 
-    const parsedPlants = plantsArr.map((plant) => (
+    const parsedPlants = plants.map((plant) => (
         <PlantListItem {...plant} key={plant.id}/>
     ));
     return (
