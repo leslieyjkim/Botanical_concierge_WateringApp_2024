@@ -12,11 +12,17 @@ import { plantsArr } from "./data/plantData";
 
 function App() {
 
+  const [plants, setPlants] = useState(plantsArr)     
+  //Hey, let's have a 'state' called 'plants' and the way to change it will be called 'setPlants'.
+  //And I'll use 'useState' hook.And the original data will be 'plantsArr' that we have. 
+  //Finally, I can control my data from the webpage's rightclick: 'inspect' -> components'
+  //I can update the watered date on there, it will be applicable & updated on the page real time.
+  
   return (
     <>
-      <Header amount={plantsArr.length}/>
+      <Header amount={plants.length}/>   
     <main>
-      <PlantList plants={plantsArr}/>
+      <PlantList plants={plants}/>
     </main>
     </>
   )
@@ -31,4 +37,5 @@ export default App
 //Because, the data in React goes from the top to the bottom.
 //like, from the parent to the children.
 //which means, PlantList can't give data to Header. 
-//So, I added line 6, import { plantsArr } from "./data/plantData";
+//So, I added line 6, import { plantsArr } from "./data/plantData"; 
+//Now, Data comes from top to bottom from 1 source. 
