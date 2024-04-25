@@ -23,10 +23,19 @@ function App() {
   const updateWateredDate = (plantId) => {   //I need to know plantId
     const plantToUpdate = plants.find((plant) => plant.id === plantId) //Hey,plants, can you find the plant where the ID matches the plantId of my function?
     //above, we can use 'find'method on data of 'array' : plantsArr
-    plantToUpdate.lastWatered = new Date().toLocaleDateString() 
-    //Hey,plantToUpdate, you know your lastWatered date right? I want to change it to today.
-    setPlants(plants) //Once we have that, I want to setPlants to plants. Because I mutated the data inside it. 
+    const plantToUpdateIndex = plants.findIndex((plant) => plant.id === plantId)
+    const updatedPlant = {...plantToUpdate}
+    updatedPlant.lastWatered = new Date().toLocaleDateString() 
+    const updatedPlants = [...plants] //Hey, updatedPlants, let's create a copy of the plantsArray. And I want to put my 'updatedPlant' in this newly Array. I don't know the index, so added line26
+    updatedPlants[plantToUpdateIndex] = updatedPlant //Hey, updatedPlants, you know the position of the plant to update index,(yeah) I want to put my 'updatedPlant' in there to replace one.
+    setPlants(updatedPlants) //Once we have that, I can give setPlants to updatedPlants.
   }
+  //Problem: nothing updated. Because React thinks that plants(line15) and plants(line31) are same object, so nothing change-> nothing to do.
+  //So, in the above, we deal with Array,
+  //in the below, we deal with Object.
+  //I don't want to change the original, but I want to make new plant. So added line27./and update line27.
+
+
 
   return (
     <>
