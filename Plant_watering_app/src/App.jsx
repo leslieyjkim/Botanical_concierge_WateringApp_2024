@@ -50,7 +50,7 @@ function App() {
   return (
     <>
       <Header amount={plantList.length}/>   
-    <section>
+    {/* <section>
       <button onClick={() => updateWateredDate("1")}>Plant 1</button> 
       <button onClick={() => updateWateredDate("2")}>Plant 2</button>
       <button onClick={() => updateWateredDate("3")}>Plant 3</button>
@@ -61,9 +61,9 @@ function App() {
       <button onClick={() => updateWateredDate("8")}>Plant 8</button>
       <button onClick={() => updateWateredDate("9")}>Plant 9</button>
       <button onClick={() => updateWateredDate("10")}>Plant 10</button>
-    </section> 
+    </section>  */}
     <main>
-      <PlantList plants={plantList}/>
+      <PlantList plants={plantList} updateWateredDate={updateWateredDate} /> 
     </main>
     </>
   )//Above, in the button,
