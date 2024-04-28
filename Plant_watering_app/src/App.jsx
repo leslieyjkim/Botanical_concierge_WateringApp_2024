@@ -36,9 +36,10 @@ function App() {
   //I don't want to change the original, but I want to make new plant. So added line27./and update line27.
 
   const updateWateredDate = (plantId) => {
-    const plantToUpdate = {...plantsObj[plantId]};
+    const plantToUpdate = {...plants[plantId]};
+    plantToUpdate.lastWatered = new Date().toLocaleDateString(); 
 
-    const updatedPlants = {...plantsObj, [plantId]:plantToUpdate};
+    const updatedPlants = {...plants, [plantId]: plantToUpdate };
     //the spreaded version of the plantsObj,
     //but then Hey, you know what the position of the plantId?
     //we should put the plantToUpdate there.
