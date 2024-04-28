@@ -7,7 +7,11 @@ export default function PlantList(props){
     const parsedPlants = 
         Array.isArray(plants) &&          //Hey Array, can you check if plants is an array? If so, please run the plants 'map' below.
         plants.map((plant) => (           //array이기 때문에 map을 쓸 수 있는 거야. 아니면 크래쉬.
-        <PlantListItem {...plant} updateWateredDate={updateWateredDate} key={plant.id}/>
+        <PlantListItem 
+            {...plant} 
+            updateWateredDate={() => updateWateredDate(plant.id)} 
+            key={plant.id}
+        />
     ));
     return (
         <section className='PlantList'>

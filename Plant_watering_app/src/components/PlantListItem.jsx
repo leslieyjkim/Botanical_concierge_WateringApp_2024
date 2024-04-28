@@ -22,7 +22,7 @@ const checkIfWellWatered = (lastWatered, wateringInterval) => {
 }
 
 export default function PlantListItem(props) {
-    const { name, type, lastWatered, wateringInterval, updateWateredDate, id } = props;
+    const { name, type, lastWatered, wateringInterval, updateWateredDate } = props;
 
     const plantListItemStyle = {
         border: "0.5em solid white",
@@ -42,7 +42,7 @@ export default function PlantListItem(props) {
                 {name} - {type}
             </h1>
             <h2>Last watered on: {lastWatered}</h2>
-            <button onClick={() => updateWateredDate(id)}>Water me!</button>
+            <button onClick={updateWateredDate}>Water me!</button>
         </article>
     )
 }
