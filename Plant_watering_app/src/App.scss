@@ -1,0 +1,25 @@
+#root {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.Header {
+  width: 100%;
+  background-color: #6f4e37;
+  color:#f7f1e4;
+  padding: 2em;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+.PlantList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.PlantListItem {
+  width: 700px;
+  color:#f7f1e4;;
+}

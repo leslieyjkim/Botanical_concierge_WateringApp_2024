@@ -11,6 +11,8 @@
 
 /* <PlantListItem id={1} type="Monsterous plant" name="Monstera" lastWatered="2023-12-20" wateringInterval={7} /> */
 
+
+
 const checkIfWellWatered = (lastWatered, wateringInterval) => {
     const todayDate = new Date()
     const lastWateredDate = new Date(lastWatered)
@@ -33,16 +35,25 @@ export default function PlantListItem(props) {
         //so if it's well watered, I want the color to be green,
         //if not, I want the color to be red.
         //'ternary operator'
-        margin: "1em"
+        margin: "2em",
+        borderRadius: '20px'
     }
 
     return (
         <article className="PlantListItem" style={plantListItemStyle}>
             <h1>
-                {name} - {type}
+                {name} <br></br>
+                {type}
             </h1>
             <h2>Last watered on: {lastWatered}</h2>
-            <button onClick={updateWateredDate}>Water me!</button>
+            <button onClick={updateWateredDate}
+                    style={{
+                        backgroundColor: '#18b2b5',
+                        borderRadius: '5px',
+                        padding: '10px 20px',
+                        cursor: 'pointer' 
+                      }}
+            >Water me! 💧</button>
         </article>
     )
 }

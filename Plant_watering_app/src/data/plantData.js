@@ -2,28 +2,28 @@ export const plant1 = {
     id: "1",
     type: "Monsterous plant",
     name: "Monstera",
-    lastWatered: "2023-12-20",
+    lastWatered: "12/20/2023",
     wateringInterval: 7,
   };
   export const plant2 = {
     id: "2",
     type: "Paper or real?",
     name: "Tulips",
-    lastWatered: "2023-12-10",
+    lastWatered: "12/10/2023",
     wateringInterval: 4,
   };
   export const plant3 = {
     id: "3",
     type: "Blossoms are nice",
     name: "Cherry",
-    lastWatered: "2024-01-01",
+    lastWatered: "01/01/2024",
     wateringInterval: 60,
   };
   export const plant4 = {
     id: "4",
     type: "GIMME THAT",
     name: "Money Tree",
-    lastWatered: "2022-01-20",
+    lastWatered: "01/20/2022",
     wateringInterval: 1000,
   };
 
@@ -31,7 +31,7 @@ export const plant1 = {
     id: "5",
     type: "Succulent",
     name: "Aloe Vera",
-    lastWatered: "2023-11-15",
+    lastWatered: "11/15/2023",
     wateringInterval: 14,
   };
   
@@ -39,7 +39,7 @@ export const plant1 = {
     id: "6",
     type: "Cactus",
     name: "Prickly Pear",
-    lastWatered: "2023-11-30",
+    lastWatered: "12/15/2023",
     wateringInterval: 21,
   };
   
@@ -47,7 +47,7 @@ export const plant1 = {
     id: "7",
     type: "Tropical",
     name: "Bird of Paradise",
-    lastWatered: "2023-12-05",
+    lastWatered: "04/23/2024",
     wateringInterval: 10,
   };
   
@@ -55,7 +55,7 @@ export const plant1 = {
     id: "8",
     type: "Fern",
     name: "Boston Fern",
-    lastWatered: "2024-01-10",
+    lastWatered: "04/25/2024",
     wateringInterval: 7,
   };
   
@@ -63,7 +63,7 @@ export const plant1 = {
     id: "9",
     type: "Succulent",
     name: "Echeveria",
-    lastWatered: "2023-12-25",
+    lastWatered: "01/25/2024",
     wateringInterval: 14,
   };
   
@@ -71,7 +71,7 @@ export const plant1 = {
     id: "10",
     type: "Herb",
     name: "Basil",
-    lastWatered: "2024-01-15",
+    lastWatered: "01/15/2024",
     wateringInterval: 3,
   };
   

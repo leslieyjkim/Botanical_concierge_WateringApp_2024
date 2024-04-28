@@ -15,7 +15,7 @@ export default function PlantList(props){
     ));
     return (
         <section className='PlantList'>
-            <h1>All the plants</h1>
+            {/* <h1>All the plants</h1> */}
             {parsedPlants}  
         </section>
     )

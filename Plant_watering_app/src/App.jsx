@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import './App.css'
+import './App.scss'
 import PlantList from "./components/PlantList";
 import Header from "./components/Header";
 
@@ -77,7 +77,15 @@ function App() {
       <button onClick={() => updateWateredDate("10")}>Plant 10</button>
     </section>  */}
     <main>
-      <button onClick={waterAllPlants}>WATER EVERYGTHING!</button>
+      <button 
+        onClick={waterAllPlants}
+        style={{
+          backgroundColor: '#18b2b5',
+          borderRadius: '5px',
+          padding: '10px 20px',
+          cursor: 'pointer' 
+        }}
+      >WATER EVERYGTHING! 💦</button>
       <PlantList plants={plantList} updateWateredDate={updateWateredDate} /> 
     </main>
     </>

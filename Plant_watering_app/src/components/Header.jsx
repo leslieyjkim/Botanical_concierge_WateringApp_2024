@@ -1,5 +1,5 @@
 import React from 'react';
-import '../App.css';
+
 
 
 export default function Header(props) {
@@ -7,7 +7,7 @@ export default function Header(props) {
     return (
         <header className="Header">
             <h1>Botanical Concierge</h1>
-            <h2>Green-guardian helping {amount} plants from dehydration</h2>
+            <h2>Green-guardian helping <span style={{ color: '#cfba1d' }}>{amount}</span> plants from dehydration</h2>
         </header>
     )
 }  
