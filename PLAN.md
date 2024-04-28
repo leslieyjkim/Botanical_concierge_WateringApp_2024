@@ -99,3 +99,15 @@ const waterAllPlants = (plants) => {
   return updatedPlants;
 };
 ```
+
+###Prop-drilling
+1. Creating a state & a function in the App.jsx
+2. And then giving it to PlantList as a 'prop',
+3. Then from the PlantList, giving it to PlantListItem 
+4. Then PlantListItem to use it. 
+: The props start at the top, and slowly goes down to all of the levels until we actually need it. 
+: we can't create a state('const [plant, setPlant] = useState()') at the bottom level of component, 'PlantListItem'.
+: Because the PlantListItem is not in charge of its own data. (The APP / PlantList is.)
+: only the job of the PlantListItem is just showing the items(that's prop, not state). 
+showing the items is the props vs modyfing the data is the state.
+
