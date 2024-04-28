@@ -1,3 +1,7 @@
+import React from 'react';
+import '../App.css';
+
+
 export default function Header(props) {
     const {amount} = props //I receive a props called amount
     return (
