@@ -47,6 +47,20 @@ function App() {
     setPlants(updatedPlants);
   };
 
+  const waterAllPlants = () => {
+    const updatedPlants = { ...plants };
+
+    for (const plantId in plants) {
+      const updatedPlant = { ...plants[plantId] };
+
+      updatedPlant.lastWatered = new Date().toLocaleDateString();
+
+      updatedPlants[plantId] = updatedPlant;
+    }
+
+    setPlants(updatedPlants);
+  };
+
   return (
     <>
       <Header amount={plantList.length}/>   
@@ -63,6 +77,7 @@ function App() {
       <button onClick={() => updateWateredDate("10")}>Plant 10</button>
     </section>  */}
     <main>
+      <button onClick={waterAllPlants}>WATER EVERYGTHING!</button>
       <PlantList plants={plantList} updateWateredDate={updateWateredDate} /> 
     </main>
     </>
