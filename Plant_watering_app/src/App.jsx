@@ -3,7 +3,7 @@ import './App.css'
 import PlantList from "./components/PlantList";
 import Header from "./components/Header";
 
-import { plantsArr } from "./data/plantData";
+import { plantsArr, plantsObj } from "./data/plantData";  //I made 2 version to contrast both plantsArr and plantsObj
 
 //const [count, setCount] = useState(0)
 //useState Hook (React functionality that you "hook" into)
@@ -12,34 +12,43 @@ import { plantsArr } from "./data/plantData";
 
 function App() {
 
-  const [plants, setPlants] = useState(plantsArr);     
+  const [plants, setPlants] = useState(plantsObj);     
   //Hey, let's have a 'state' called 'plants' and the way to change it will be called 'setPlants'.
   //And I'll use 'useState' hook.And the original data will be 'plantsArr' that we have. 
   //Finally, I can control my data from the webpage's rightclick: 'inspect' -> components'
   //I can update the watered date on there, it will be applicable & updated on the page real time.
-  
+  const plantList = Object.values(plants)
 
   //below: If I want to update the specific plant's watered date with function called 'updateWateredDate'
-  const updateWateredDate = (plantId) => {   //I need to know plantId
-    const plantToUpdate = plants.find((plant) => plant.id === plantId) //Hey,plants, can you find the plant where the ID matches the plantId of my function?
+  const updateWateredDateArr = (plantId) => {   //I need to know plantId
+    const plantToUpdate = plants.find((plant) => plant.id === plantId); //Hey,plants, can you find the plant where the ID matches the plantId of my function?
     //above, we can use 'find'method on data of 'array' : plantsArr
-    const plantToUpdateIndex = plants.findIndex((plant) => plant.id === plantId)
-    const updatedPlant = {...plantToUpdate}
-    updatedPlant.lastWatered = new Date().toLocaleDateString() 
-    const updatedPlants = [...plants] //Hey, updatedPlants, let's create a copy of the plantsArray. And I want to put my 'updatedPlant' in this newly Array. I don't know the index, so added line26
-    updatedPlants[plantToUpdateIndex] = updatedPlant //Hey, updatedPlants, you know the position of the plant to update index,(yeah) I want to put my 'updatedPlant' in there to replace one.
-    setPlants(updatedPlants) //Once we have that, I can give setPlants to updatedPlants.
-  }
+    const plantToUpdateIndex = plants.findIndex((plant) => plant.id === plantId);
+    const updatedPlant = {...plantToUpdate};
+    updatedPlant.lastWatered = new Date().toLocaleDateString(); 
+    const updatedPlants = [...plants]; //Hey, updatedPlants, let's create a copy of the plantsArray. And I want to put my 'updatedPlant' in this newly Array. I don't know the index, so added line26
+    updatedPlants[plantToUpdateIndex] = updatedPlant; //Hey, updatedPlants, you know the position of the plant to update index,(yeah) I want to put my 'updatedPlant' in there to replace one.
+    setPlants(updatedPlants); //Once we have that, I can give setPlants to updatedPlants.
+  };
   //Problem: nothing updated. Because React thinks that plants(line15) and plants(line31) are same object, so nothing change-> nothing to do.
   //So, in the above, we deal with Array,
   //in the below, we deal with Object.
   //I don't want to change the original, but I want to make new plant. So added line27./and update line27.
 
+  const updateWateredDate = (plantId) => {
+    const plantToUpdate = {...plantsObj[plantId]};
 
+    const updatedPlants = {...plantsObj, [plantId]:plantToUpdate};
+    //the spreaded version of the plantsObj,
+    //but then Hey, you know what the position of the plantId?
+    //we should put the plantToUpdate there.
+    //In this version(OBJ), since we dealing w/ keys, so we can directly target elements more clearly than Array version.
+    setPlants(updatedPlants);
+  };
 
   return (
     <>
-      <Header amount={plants.length}/>   
+      <Header amount={plantList.length}/>   
     <section>
       <button onClick={() => updateWateredDate("1")}>Plant 1</button> 
       <button onClick={() => updateWateredDate("2")}>Plant 2</button>
@@ -53,7 +62,7 @@ function App() {
       <button onClick={() => updateWateredDate("10")}>Plant 10</button>
     </section> 
     <main>
-      <PlantList plants={plants}/>
+      <PlantList plants={plantList}/>
     </main>
     </>
   )//Above, in the button,
