@@ -6,3 +6,4 @@
 -cd Plant_watering_app
 -npm install
 -npm run dev
+-Nov 13 2023 cohort W7D2
